@@ -1,5 +1,5 @@
 ﻿#pragma once
 
-class IFBullet;
-class IFUnit;
 class EntityManager;
+class StageManager;
+class GameManager;

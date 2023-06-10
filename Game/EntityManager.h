@@ -2,8 +2,13 @@
 #include "Interface/IFUnit.h"
 #include "Interface/IFBullet.h"
 
+class GameManager;
+
+/// @brief 機体、弾丸などすべてのエンティティの挙動更新、描画、削除などの管理を行う。
 class EntityManager {
 private:
+	GameManager* gm;
+
 	/// プレイヤーの機体
 	Array<IFUnit*> playerUnits;
 	/// 敵の機体
@@ -22,6 +27,8 @@ private:
 	/// 追加予定の敵の弾丸
 	Array<IFBullet*> preEnemyBullets;
 public:
+	EntityManager(GameManager* gameManager);
+
 	void Update();
 	void Draw() const;
 	void DebugDraw() const;

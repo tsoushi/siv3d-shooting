@@ -1,5 +1,8 @@
 ﻿#include "EntityManager.h"
 
+EntityManager::EntityManager(GameManager* gameManager)
+	: gm(gameManager) {}
+
 void EntityManager::Update() {
 	// 新規追加のエンティティをマージ
 	playerUnits.insert(playerUnits.end(), prePlayerUnits.begin(), prePlayerUnits.end());
@@ -113,6 +116,8 @@ void EntityManager::DebugDraw() const {
 }
 
 void EntityManager::Add(IFUnit* unit) {
+	unit->SetGameManager(gm);
+
 	switch (unit->GetRegion()) {
 	case Region::Player:
 		prePlayerUnits << unit;
@@ -124,6 +129,8 @@ void EntityManager::Add(IFUnit* unit) {
 }
 
 void EntityManager::Add(IFBullet* bullet) {
+	bullet->SetGameManager(gm);
+
 	switch (bullet->GetRegion()) {
 	case Region::Player:
 		prePlayerBullets << bullet;

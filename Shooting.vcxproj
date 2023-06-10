@@ -115,8 +115,12 @@
   <ItemGroup>
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="Game\EntityManager.cpp" />
+    <ClCompile Include="Game\GameManager.cpp" />
     <ClCompile Include="Game\GameScene.cpp" />
     <ClCompile Include="Game\Bullet\TestBullet.cpp" />
+    <ClCompile Include="Game\StageManager.cpp" />
+    <ClCompile Include="Game\Stage\Stage1_1.cpp" />
+    <ClCompile Include="Game\Stage\StageTemplate.cpp" />
     <ClCompile Include="Game\Unit\TestUnit.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -322,11 +326,15 @@
     <ClInclude Include="Game\EntityManager.h" />
     <ClInclude Include="Game\GameClasses.h" />
     <ClInclude Include="Game\GameCommon.h" />
+    <ClInclude Include="Game\GameManager.h" />
     <ClInclude Include="Game\GameScene.h" />
     <ClInclude Include="Game\Interface\IFBullet.h" />
     <ClInclude Include="Game\Interface\IFEntity.h" />
     <ClInclude Include="Game\Interface\IFUnit.h" />
     <ClInclude Include="Game\Bullet\TestBullet.h" />
+    <ClInclude Include="Game\StageManager.h" />
+    <ClInclude Include="Game\Stage\IFStage.h" />
+    <ClInclude Include="Game\Stage\Stages.h" />
     <ClInclude Include="Game\Unit\TestUnit.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>

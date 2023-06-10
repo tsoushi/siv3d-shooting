@@ -1,10 +1,14 @@
 ﻿#pragma once
 #include "../GameCommon.h"
 
+class GameManager;
+
 /// @brief 機体
 class IFUnit {
 public:
 	virtual ~IFUnit() {};
+
+	virtual void SetGameManager(GameManager* gameManager) = 0;
 
 	virtual void Update() = 0;
 	virtual void Draw() const = 0;

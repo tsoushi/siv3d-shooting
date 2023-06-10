@@ -1,10 +1,10 @@
 ﻿#pragma once
 #include "../Common.h"
-#include "EntityManager.h"
+#include "GameManager.h"
 
 class GameScene : public App::Scene {
 private:
-	EntityManager entityManager;
+	GameManager gameManager;
 public:
 	GameScene(const InitData& init);
 	void update() override;

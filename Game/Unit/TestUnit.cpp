@@ -1,8 +1,11 @@
 ﻿#include "TestUnit.h"
 #include "../Bullet/TestBullet.h"
 
-TestUnit::TestUnit(EntityManager* entityManager)
-	: entityManager(entityManager) {}
+TestUnit::TestUnit() {}
+
+void TestUnit::SetGameManager(GameManager* gameManager) {
+	gm = gameManager;
+}
 
 void TestUnit::Update() {
 	int32 speed = 5;
@@ -11,7 +14,7 @@ void TestUnit::Update() {
 	if (KeyD.pressed()) pos.x += speed;
 	if (KeyA.pressed()) pos.x -= speed;
 
-	if (KeySpace.pressed()) entityManager->Add(new TestBullet(pos));
+	if (KeySpace.pressed()) gm->em.Add(new TestBullet(pos));
 }
 
 void TestUnit::Draw() const {

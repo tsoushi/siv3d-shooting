@@ -1,13 +1,15 @@
 ﻿#pragma once
 #include "../Interface/IFUnit.h"
-#include "../EntityManager.h"
+#include "../GameManager.h"
 
 class TestUnit : public IFUnit {
 private:
 	Vec2 pos;
-	EntityManager* entityManager;
+	GameManager* gm;
 public:
-	TestUnit(EntityManager* entityManager);
+	TestUnit();
+
+	void SetGameManager(GameManager* gameManager);
 
 	void Update() override;
 	void Draw() const override;

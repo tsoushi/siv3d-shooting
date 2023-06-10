@@ -2,11 +2,14 @@
 #include "../GameCommon.h"
 
 class IFUnit;
+class GameManager;
 
 /// @brief 弾丸
 class IFBullet {
 public:
 	virtual ~IFBullet() {};
+
+	virtual void SetGameManager(GameManager* gameManager) = 0;
 
 	virtual void Update() = 0;
 	virtual void Draw() const = 0;

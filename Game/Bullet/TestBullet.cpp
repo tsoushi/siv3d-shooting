@@ -3,6 +3,10 @@
 TestBullet::TestBullet(Vec2 pos)
 	: pos(pos) {}
 
+void TestBullet::SetGameManager(GameManager* gameManager) {
+	gm = gameManager;
+}
+
 void TestBullet::Update() {
 	int32 speed = 1;
 	if (KeyW.pressed()) pos.y -= speed;
