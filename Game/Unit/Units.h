@@ -26,6 +26,7 @@ public:
 
 class Player : public UnitTemplate {
 private:
+	Timer bulletInterval{ 0.1s, StartImmediately::Yes };
 public:
 	Player(Vec2 pos);
 
@@ -33,4 +34,12 @@ public:
 	void Draw() const override;
 
 	bool IsActive() const override;
+};
+
+class EnemyTest : public UnitTemplate {
+public:
+	EnemyTest(Vec2 pos);
+
+	void Move() override;
+	void Draw() const override;
 };

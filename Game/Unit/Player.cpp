@@ -16,7 +16,14 @@ void Player::Move() {
 	if (KeyA.pressed()) velocity.x = -speed;
 	if (KeyD.pressed()) velocity.x = speed;
 
-	if (KeySpace.pressed()) gm->em.Add(new PlayerBullet(pos, 0.5 * Math::Pi));
+	if (bulletInterval.reachedZero() && KeySpace.pressed()) {
+		gm->em.Add(new PlayerBullet(pos, 0.4 * Math::Pi));
+		gm->em.Add(new PlayerBullet(pos, 0.45 * Math::Pi));
+		gm->em.Add(new PlayerBullet(pos, 0.5 * Math::Pi));
+		gm->em.Add(new PlayerBullet(pos, 0.55 * Math::Pi));
+		gm->em.Add(new PlayerBullet(pos, 0.6 * Math::Pi));
+		bulletInterval.restart();
+	}
 }
 
 void Player::Draw() const {

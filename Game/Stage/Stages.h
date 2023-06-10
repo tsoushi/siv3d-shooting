@@ -13,6 +13,7 @@ public:
 
 class Stage1_1 : public StageTemplate {
 private:
+	Timer interval{ 1s };
 public:
 	using StageTemplate::StageTemplate;
 

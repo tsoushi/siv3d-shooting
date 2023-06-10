@@ -3,10 +3,11 @@
 PlayerBullet::PlayerBullet(Vec2 pos, double direction) {
 	this->pos = pos;
 	this->direction = direction;
+	region = Region::Player;
 	velocity.x = Math::Cos(direction) * 500;
 	velocity.y = -Math::Sin(direction) * 500;
 
-	this->hp = 1;
+	hp = 1;
 }
 
 void PlayerBullet::Move() {
@@ -15,4 +16,9 @@ void PlayerBullet::Move() {
 
 void PlayerBullet::Draw() const {
 	Circle{ pos, 5 }.draw(Palette::Yellow);
+}
+
+void PlayerBullet::Attack(IFUnit* target) {
+	target->Damaged(1);
+	hp = 0;
 }

@@ -32,4 +32,6 @@ public:
 
 	void Move() override;
 	void Draw() const override;
+
+	void Attack(IFUnit* target) override;
 };
