@@ -114,6 +114,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Common.cpp" />
+    <ClCompile Include="Game\Bullet\BulletTemplate.cpp" />
+    <ClCompile Include="Game\Bullet\PlayerBullet.cpp" />
     <ClCompile Include="Game\EntityManager.cpp" />
     <ClCompile Include="Game\GameManager.cpp" />
     <ClCompile Include="Game\GameScene.cpp" />
@@ -121,7 +123,8 @@
     <ClCompile Include="Game\StageManager.cpp" />
     <ClCompile Include="Game\Stage\Stage1_1.cpp" />
     <ClCompile Include="Game\Stage\StageTemplate.cpp" />
-    <ClCompile Include="Game\Unit\TestUnit.cpp" />
+    <ClCompile Include="Game\Unit\Player.cpp" />
+    <ClCompile Include="Game\Unit\UnitTemplate.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -323,6 +326,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
+    <ClInclude Include="Game\Bullet\Bullets.h" />
     <ClInclude Include="Game\EntityManager.h" />
     <ClInclude Include="Game\GameClasses.h" />
     <ClInclude Include="Game\GameCommon.h" />
@@ -335,7 +339,7 @@
     <ClInclude Include="Game\StageManager.h" />
     <ClInclude Include="Game\Stage\IFStage.h" />
     <ClInclude Include="Game\Stage\Stages.h" />
-    <ClInclude Include="Game\Unit\TestUnit.h" />
+    <ClInclude Include="Game\Unit\Units.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>

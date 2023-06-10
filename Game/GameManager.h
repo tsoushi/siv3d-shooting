@@ -4,11 +4,23 @@
 
 /// @brief EntityManager, StageManagerを保持し、ゲームの進行を管理する。
 class GameManager {
+private:
+	RenderTexture entityRenderTexture{ 400, 600 };
+	Vec2 entityRenderPos{ 100, 0 };
 public:
 	GameManager();
 
 	void Update();
 	void Draw() const;
+
+	/// @brief エンティティ描画領域を取得する
+	/// @return 描画領域
+	RectF GetEntityRenderArea() const;
+
+	/// @brief エンティティの生存エリア範囲内かどうか
+	/// @param pos チェック対象の座標
+	/// @return 範囲内ならtrue
+	bool IsInAliveArea(Vec2 pos) const;
 
 	EntityManager em;
 	StageManager sm;

@@ -112,7 +112,8 @@ void EntityManager::Draw() const {
 
 void EntityManager::DebugDraw() const {
 	static Font font{ 10 };
-	font(playerUnits.size(), U" : ", enemyBullets.size()).draw(Vec2{ 0, 0 });
+	String nums = U"N: PU-{} PB-{} EU-{} EB-{}"_fmt(playerUnits.size(), playerBullets.size(), enemyUnits.size(), enemyBullets.size());
+	font(nums).draw(Vec2{ 0, 0 });
 }
 
 void EntityManager::Add(IFUnit* unit) {
