@@ -6,6 +6,8 @@ void UnitTemplate::SetGameManager(GameManager* gameManager) {
 
 void UnitTemplate::Update() {
 	Move();
+	velocity += accel * Scene::DeltaTime();
+	if (velocity.length() > maxSpeed) velocity *= maxSpeed / velocity.length();
 	pos += velocity * Scene::DeltaTime();
 }
 

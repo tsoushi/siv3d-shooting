@@ -6,6 +6,7 @@ PlayerBullet::PlayerBullet(Vec2 pos, double direction) {
 	region = Region::Player;
 	velocity.x = Math::Cos(direction) * 500;
 	velocity.y = -Math::Sin(direction) * 500;
+	maxSpeed = 500;
 
 	hp = 1;
 	attack = 1;

@@ -7,6 +7,7 @@ EnemyTest::EnemyTest(Vec2 pos) {
 	region = Region::Enemy;
 	hp = 3;
 	velocity.y = 200;
+	maxSpeed = 1000;
 	score = 100;
 }
 

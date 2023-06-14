@@ -6,6 +6,8 @@ void BulletTemplate::SetGameManager(GameManager* gameManager) {
 
 void BulletTemplate::Update() {
 	Move();
+	velocity += accel * Scene::DeltaTime();
+	if (velocity.length() > maxSpeed) velocity *= maxSpeed / velocity.length();
 	pos += velocity * Scene::DeltaTime();
 }
 

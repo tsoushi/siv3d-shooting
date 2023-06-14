@@ -9,7 +9,9 @@ protected:
 	GameManager* gm;
 	EntityDrawer drawer;
 	Vec2 pos;
-	Vec2 velocity;
+	Vec2 velocity{ 0, 0 };
+	double maxSpeed = 0;
+	Vec2 accel{ 0, 0 };
 	Region region;
 	int32 hp;
 	int32 score = 0;
