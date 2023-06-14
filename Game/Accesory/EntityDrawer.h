@@ -6,7 +6,7 @@ private:
 	Texture texture;
 	Size size;
 
-	Timer damageEffectTimer{ 0.1s };
+	Timer damageEffectTimer{ 0.05s };
 public:
 	EntityDrawer();
 
