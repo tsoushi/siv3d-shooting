@@ -6,17 +6,15 @@ void BulletTemplate::SetGameManager(GameManager* gameManager) {
 
 void BulletTemplate::Update() {
 	Move();
-	velocity += accel * Scene::DeltaTime();
-	if (velocity.length() > maxSpeed) velocity *= maxSpeed / velocity.length();
-	pos += velocity * Scene::DeltaTime();
+	body.Update();
 }
 
 void BulletTemplate::Draw() const {
-	Circle{ pos, 10 }.draw();
+	Circle{ body.pos, 10 }.draw();
 }
 
 RectF BulletTemplate::GetBody() const {
-	return RectF{ Arg::center(pos), Vec2{ 10, 10 } };
+	return RectF{ Arg::center(body.pos), Vec2{ 10, 10 } };
 }
 
 Region BulletTemplate::GetRegion() const {
@@ -24,7 +22,7 @@ Region BulletTemplate::GetRegion() const {
 }
 
 bool BulletTemplate::IsActive() const {
-	return hp > 0 && gm->IsInAliveArea(pos);
+	return hp > 0 && gm->IsInAliveArea(body.pos);
 }
 
 void BulletTemplate::Attack(IFUnit* target) {

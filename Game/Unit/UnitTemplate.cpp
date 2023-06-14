@@ -6,20 +6,18 @@ void UnitTemplate::SetGameManager(GameManager* gameManager) {
 
 void UnitTemplate::Update() {
 	Move();
-	velocity += accel * Scene::DeltaTime();
-	if (velocity.length() > maxSpeed) velocity *= maxSpeed / velocity.length();
-	pos += velocity * Scene::DeltaTime();
+	body.Update();
 }
 
 void UnitTemplate::Draw() const {
-	Circle{ pos, 10 }.draw();
+	Circle{ body.pos, 10 }.draw();
 }
 
 void UnitTemplate::Destroy() {
 }
 
 RectF UnitTemplate::GetBody() const {
-	return RectF{ Arg::center(pos), Vec2{ 10, 10 } };
+	return RectF{ Arg::center(body.pos), Vec2{ 10, 10 } };
 }
 
 Region UnitTemplate::GetRegion() const {
@@ -27,7 +25,7 @@ Region UnitTemplate::GetRegion() const {
 }
 
 bool UnitTemplate::IsActive() const {
-	return hp > 0 && gm->IsInAliveArea(pos);
+	return hp > 0 && gm->IsInAliveArea(body.pos);
 }
 
 void UnitTemplate::Damaged(int32 amount) {

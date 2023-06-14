@@ -2,16 +2,14 @@
 #include "../Interface/IFBullet.h"
 #include "../GameManager.h"
 #include "../Accesory/EntityDrawer.h"
+#include "../Accesory/KinematicBody.h"
 
 /// @brief 機体テンプレートクラス。
 class BulletTemplate : public IFBullet {
 protected:
 	GameManager* gm;
 	EntityDrawer drawer;
-	Vec2 pos;
-	Vec2 velocity{ 0, 0 };
-	double maxSpeed = 0;
-	Vec2 accel{ 0, 0 };
+	KinematicBody body;
 	Region region;
 	int32 hp = 1;
 	int32 attack = 0;
