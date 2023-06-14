@@ -8,6 +8,7 @@ PlayerBullet::PlayerBullet(Vec2 pos, double direction) {
 	velocity.y = -Math::Sin(direction) * 500;
 
 	hp = 1;
+	attack = 1;
 }
 
 void PlayerBullet::Move() {
@@ -19,6 +20,5 @@ void PlayerBullet::Draw() const {
 }
 
 void PlayerBullet::Attack(IFUnit* target) {
-	target->Damaged(1);
-	hp = 0;
+	BulletTemplate::Attack(target);
 }

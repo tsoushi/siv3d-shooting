@@ -26,4 +26,8 @@ bool BulletTemplate::IsActive() const {
 }
 
 void BulletTemplate::Attack(IFUnit* target) {
+	if (hp > 0) {
+		target->Damaged(attack);
+		hp--;
+	}
 }

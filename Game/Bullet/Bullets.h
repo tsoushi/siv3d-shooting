@@ -1,15 +1,18 @@
 ﻿#pragma once
 #include "../Interface/IFBullet.h"
 #include "../GameManager.h"
+#include "../Accesory/EntityDrawer.h"
 
 /// @brief 機体テンプレートクラス。
 class BulletTemplate : public IFBullet {
 protected:
 	GameManager* gm;
+	EntityDrawer drawer;
 	Vec2 pos;
 	Vec2 velocity;
 	Region region;
-	int32 hp;
+	int32 hp = 1;
+	int32 attack = 0;
 public:
 	virtual void SetGameManager(GameManager* gameManager);
 
