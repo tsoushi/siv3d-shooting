@@ -37,9 +37,13 @@ public:
 };
 
 class EnemyTest : public UnitTemplate {
+private:
+	Timer damagedTimer{ 0.02s };
 public:
 	EnemyTest(Vec2 pos);
 
 	void Move() override;
 	void Draw() const override;
+
+	void Damaged(int32 amount) override;
 };

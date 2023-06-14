@@ -5,8 +5,11 @@
 /// @brief EntityManager, StageManagerを保持し、ゲームの進行を管理する。
 class GameManager {
 private:
-	RenderTexture entityRenderTexture{ 400, 600 };
-	Vec2 entityRenderPos{ 100, 0 };
+	RenderTexture entityRenderTexture{ 640, 720 };
+	Vec2 entityRenderPos{ 128, 0 };
+
+	const Font scoreFont{ 56 };
+	int32 score = 0;
 public:
 	GameManager();
 

@@ -8,6 +8,9 @@ void Main()
 
 	manager.add<GameScene>(U"Game");
 
+	Window::SetFullscreen(true);
+	Window::Resize(1280, 720);
+
 	while (System::Update())
 	{
 		if (not manager.update()) {

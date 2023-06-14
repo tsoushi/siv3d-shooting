@@ -23,6 +23,9 @@ void GameManager::Draw() const {
 
 	em.DebugDraw();
 	sm.Draw();
+
+	Vec2 scoreDrawPos{ Scene::Width() * 0.80, Scene::Height() * 0.15 };
+	scoreFont(U"{:0>10}"_fmt(score)).drawAt(scoreDrawPos);// Scene::Width() * 0.65, Scene::Height() * 0.1);
 }
 
 RectF GameManager::GetEntityRenderArea() const {
