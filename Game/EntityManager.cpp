@@ -55,6 +55,7 @@ void EntityManager::Update() {
 	// 非アクティブなエンティティを削除
 	for (auto e = playerUnits.begin(); e != playerUnits.end();) {
 		if (!(*e)->IsActive()) {
+			(*e)->Destroy();
 			delete *e;
 			e = playerUnits.erase(e);
 			continue;
@@ -63,6 +64,7 @@ void EntityManager::Update() {
 	}
 	for (auto e = enemyUnits.begin(); e != enemyUnits.end();) {
 		if (!(*e)->IsActive()) {
+			(*e)->Destroy();
 			delete* e;
 			e = enemyUnits.erase(e);
 			continue;

@@ -12,6 +12,7 @@ public:
 
 	virtual void Update() = 0;
 	virtual void Draw() const = 0;
+	virtual void Destroy() = 0;
 
 	/// @brief 当たり判定の範囲を取得する
 	/// @return 当たり判定の範囲

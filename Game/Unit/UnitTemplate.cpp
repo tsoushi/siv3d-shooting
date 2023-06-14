@@ -13,6 +13,10 @@ void UnitTemplate::Draw() const {
 	Circle{ pos, 10 }.draw();
 }
 
+void UnitTemplate::Destroy() {
+	gm->IncScore(score);
+}
+
 RectF UnitTemplate::GetBody() const {
 	return RectF{ Arg::center(pos), Vec2{ 10, 10 } };
 }

@@ -10,11 +10,13 @@ protected:
 	Vec2 velocity;
 	Region region;
 	int32 hp;
+	int32 score = 0;
 public:
 	virtual void SetGameManager(GameManager* gameManager);
 
 	virtual void Update() override;
-	virtual void Draw() const = 0;
+	virtual void Draw() const override = 0;
+	virtual void Destroy() override;
 
 	virtual void Move() = 0;
 

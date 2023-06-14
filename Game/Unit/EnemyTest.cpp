@@ -5,6 +5,7 @@ EnemyTest::EnemyTest(Vec2 pos) {
 	region = Region::Enemy;
 	hp = 3;
 	velocity.y = 200;
+	score = 100;
 
 	damagedTimer.setRemaining(0s);
 	damagedTimer.start();
@@ -19,9 +20,6 @@ void EnemyTest::Draw() const {
 }
 
 void EnemyTest::Damaged(int32 amount) {
-	if (hp > 0) {
-		hp -= amount;
-		if (hp == 0) gm->IncScore(100);
-		damagedTimer.restart();
-	}
+	hp -= amount;
+	damagedTimer.restart();
 }
