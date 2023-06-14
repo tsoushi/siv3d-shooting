@@ -30,6 +30,7 @@ bool UnitTemplate::IsActive() const {
 
 void UnitTemplate::Damaged(int32 amount) {
 	if (hp > 0) {
+		drawer.StartDamageEffect();
 		hp -= amount;
 		if (hp == 0) gm->IncScore(score);
 	}

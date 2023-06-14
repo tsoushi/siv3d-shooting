@@ -116,6 +116,7 @@
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="Game\Bullet\BulletTemplate.cpp" />
     <ClCompile Include="Game\Bullet\PlayerBullet.cpp" />
+    <ClCompile Include="Game\Accesory\EntityDrawer.cpp" />
     <ClCompile Include="Game\EntityManager.cpp" />
     <ClCompile Include="Game\GameManager.cpp" />
     <ClCompile Include="Game\GameScene.cpp" />
@@ -328,6 +329,7 @@
   <ItemGroup>
     <ClInclude Include="Common.h" />
     <ClInclude Include="Game\Bullet\Bullets.h" />
+    <ClInclude Include="Game\Accesory\EntityDrawer.h" />
     <ClInclude Include="Game\EntityManager.h" />
     <ClInclude Include="Game\GameClasses.h" />
     <ClInclude Include="Game\GameCommon.h" />

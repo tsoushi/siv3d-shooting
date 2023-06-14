@@ -1,14 +1,13 @@
 ﻿#include "Units.h"
 
 EnemyTest::EnemyTest(Vec2 pos) {
+	drawer.SetTexture(Texture{ U"resource/texture/test.png" });
+	drawer.SetSize({ 16, 16 });
 	this->pos = pos;
 	region = Region::Enemy;
 	hp = 3;
 	velocity.y = 200;
 	score = 100;
-
-	damagedTimer.setRemaining(0s);
-	damagedTimer.start();
 }
 
 void EnemyTest::Move() {
@@ -16,10 +15,9 @@ void EnemyTest::Move() {
 }
 
 void EnemyTest::Draw() const {
-	RectF{ Arg::center(pos), 20, 20 }.draw(damagedTimer.reachedZero() ? Palette::Purple : Palette::Red);
+	drawer.DrawAt(pos);
 }
 
 void EnemyTest::Damaged(int32 amount) {
 	UnitTemplate::Damaged(amount);
-	damagedTimer.restart();
 }

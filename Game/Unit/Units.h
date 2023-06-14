@@ -1,11 +1,13 @@
 ﻿#pragma once
 #include "../Interface/IFUnit.h"
 #include "../GameManager.h"
+#include "../Accesory/EntityDrawer.h"
 
 /// @brief 機体テンプレートクラス。
 class UnitTemplate : public IFUnit {
 protected:
 	GameManager* gm;
+	EntityDrawer drawer;
 	Vec2 pos;
 	Vec2 velocity;
 	Region region;
@@ -40,7 +42,6 @@ public:
 
 class EnemyTest : public UnitTemplate {
 private:
-	Timer damagedTimer{ 0.02s };
 public:
 	EnemyTest(Vec2 pos);
 
