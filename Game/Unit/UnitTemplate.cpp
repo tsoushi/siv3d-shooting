@@ -14,7 +14,6 @@ void UnitTemplate::Draw() const {
 }
 
 void UnitTemplate::Destroy() {
-	gm->IncScore(score);
 }
 
 RectF UnitTemplate::GetBody() const {
@@ -30,5 +29,8 @@ bool UnitTemplate::IsActive() const {
 }
 
 void UnitTemplate::Damaged(int32 amount) {
-	hp -= amount;
+	if (hp > 0) {
+		hp -= amount;
+		if (hp == 0) gm->IncScore(score);
+	}
 }

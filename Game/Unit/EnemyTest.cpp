@@ -20,6 +20,6 @@ void EnemyTest::Draw() const {
 }
 
 void EnemyTest::Damaged(int32 amount) {
-	hp -= amount;
+	UnitTemplate::Damaged(amount);
 	damagedTimer.restart();
 }
