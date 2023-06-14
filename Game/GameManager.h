@@ -25,6 +25,10 @@ public:
 	/// @return 範囲内ならtrue
 	bool IsInAliveArea(Vec2 pos) const;
 
+	/// @brief スコアを加算する
+	/// @param amount 加算量
+	void IncScore(int32 amount);
+
 	EntityManager em;
 	StageManager sm;
 };

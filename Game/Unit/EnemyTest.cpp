@@ -19,6 +19,9 @@ void EnemyTest::Draw() const {
 }
 
 void EnemyTest::Damaged(int32 amount) {
-	hp -= amount;
-	damagedTimer.restart();
+	if (hp > 0) {
+		hp -= amount;
+		if (hp == 0) gm->IncScore(100);
+		damagedTimer.restart();
+	}
 }

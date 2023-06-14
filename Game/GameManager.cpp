@@ -41,3 +41,7 @@ bool GameManager::IsInAliveArea(Vec2 pos) const {
 		pos.y < area.size.y * 1.3
 	);
 }
+
+void GameManager::IncScore(int32 amount) {
+	score += amount;
+}
